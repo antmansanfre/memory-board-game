@@ -1,18 +1,18 @@
 import { defineStore } from 'pinia';
-import { GameDifficulties } from '@/types/types';
+import { Difficulties } from '@/interfaces/game';
 
 export const useAppStore = defineStore('app', {
   state: () => ({
-    level: GameDifficulties.EASY,
+    difficulty: Difficulties.EASY,
   }),
   getters: {
-    getGameDifficulty(): GameDifficulties {
-      return this.level;
+    getGameDifficulty(): Difficulties {
+      return this.difficulty;
     },
   },
   actions: {
-    setGameDifficulty(chosenLevel: GameDifficulties) {
-      this.level = chosenLevel;
+    setGameDifficulty(chosenDifficulty: Difficulties) {
+      this.difficulty = chosenDifficulty;
     },
   },
 });

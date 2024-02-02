@@ -1,45 +1,48 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useAppStore } from './store/app';
-import { GameDifficulties } from './types/types';
+import { Difficulties } from './interfaces/game';
 
 // store
 const appStore = useAppStore();
-const { getGameDifficulty: level } = storeToRefs(appStore);
+const { getGameDifficulty: difficulty } = storeToRefs(appStore);
 
 // methods
-const handleChangeLevel = (chosenLevel: GameDifficulties) => {
-  appStore.setGameDifficulty(chosenLevel);
+const handleChangeDifficulty = (chosenDifficulty: Difficulties) => {
+  appStore.setGameDifficulty(chosenDifficulty);
 };
 </script>
 
 <template>
   <div id="app">
     <h1>Memory Board Game</h1>
+
     <div>
       <span>Dificuldade: </span>
-      <strong>{{ level }}</strong>
+      <strong>{{ difficulty }}</strong>
     </div>
 
     <ul>
       <li>
-        <button @click="handleChangeLevel(GameDifficulties.EASY)">Fácil</button>
+        <button @click="handleChangeDifficulty(Difficulties.EASY)">
+          Fácil
+        </button>
       </li>
 
       <li>
-        <button @click="handleChangeLevel(GameDifficulties.MODERATE)">
+        <button @click="handleChangeDifficulty(Difficulties.MODERATE)">
           Moderado
         </button>
       </li>
 
       <li>
-        <button @click="handleChangeLevel(GameDifficulties.CHALLENGING)">
+        <button @click="handleChangeDifficulty(Difficulties.CHALLENGING)">
           Desafiante
         </button>
       </li>
 
       <li>
-        <button @click="handleChangeLevel(GameDifficulties.EXTREME)">
+        <button @click="handleChangeDifficulty(Difficulties.EXTREME)">
           Extremo
         </button>
       </li>

@@ -1,4 +1,4 @@
-export enum GameDifficulties {
+export enum Difficulties {
   EASY = 'easy',
   MODERATE = 'moderate',
   CHALLENGING = 'challenging',
