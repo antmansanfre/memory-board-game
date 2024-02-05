@@ -9,8 +9,15 @@
     "preview": "vite preview",
     "test": "vitest run --coverage"
   },
+  "pre-commit": {
+    "run": [
+      "test"
+    ],
+    "silent": true
+  },
   "dependencies": {
     "pinia": "^2.1.7",
+    "pre-commit": "^1.2.2",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },
