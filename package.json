@@ -6,17 +6,29 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run --coverage"
+  },
+  "pre-commit": {
+    "run": [
+      "test"
+    ],
+    "silent": true
   },
   "dependencies": {
     "pinia": "^2.1.7",
+    "pre-commit": "^1.2.2",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@testing-library/vue": "^8.0.1",
     "@vitejs/plugin-vue": "^4.5.2",
+    "@vitest/coverage-v8": "^1.2.2",
+    "happy-dom": "^13.3.8",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
+    "vitest": "^1.2.2",
     "vue-tsc": "^1.8.25"
   }
 }
